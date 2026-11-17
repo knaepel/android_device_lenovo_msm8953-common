@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/xiaomi/msm8953-common
+COMMON_PATH := device/lenovo/msm8953-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -32,8 +32,8 @@ BOARD_KERNEL_CMDLINE += \
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
-TARGET_KERNEL_CONFIG := msm8953-perf_defconfig xiaomi/xiaomi.config
+TARGET_KERNEL_SOURCE := kernel/lenovo/msm8953
+TARGET_KERNEL_CONFIG := tbx704_defconfig
 TARGET_KERNEL_CLANG_VERSION := r563880
 
 # Audio
@@ -103,9 +103,12 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := lenovo
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8953
+
+# 4.9 kernel: use the msm8953 (UM 4.9 legacy) HAL variant from hardware/qcom-caf
+TARGET_ENFORCES_QSSI := true
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
@@ -154,4 +157,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
-include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk
+include vendor/lenovo/msm8953-common/BoardConfigVendor.mk

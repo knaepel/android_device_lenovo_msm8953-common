@@ -19,7 +19,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
@@ -125,9 +124,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
@@ -272,8 +268,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client \
-    hardware/xiaomi
+    hardware/qcom-caf/common/libqti-perfd-client
 
 ifneq ($(AB_OTA_UPDATER), true)
 PRODUCT_SOONG_NAMESPACES += \
@@ -296,10 +291,6 @@ PRODUCT_BOOT_JARS += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# TimeKeep
-PRODUCT_PACKAGES += \
-    TimeKeep
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -352,4 +343,4 @@ PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/msm8953-common/msm8953-common-vendor.mk)
+$(call inherit-product, vendor/lenovo/msm8953-common/msm8953-common-vendor.mk)
