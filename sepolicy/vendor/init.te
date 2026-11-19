@@ -1,1 +1,4 @@
 allow init proc_boot_reason:file r_file_perms;
+
+# /vendor/dsp is mounted with context=adsprpcd_file (as on onclite)
+allow init adsprpcd_file:filesystem { getattr mount relabelfrom relabelto };
