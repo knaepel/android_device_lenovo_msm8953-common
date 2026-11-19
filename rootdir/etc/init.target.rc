@@ -77,12 +77,12 @@ on post-fs-data
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
-#Create folder for mm-qcamera-daemon
+#Create folder for mm-qcamera-daemon (socket and dumps, see the blob fixups)
 mkdir /data/vendor/camera 0770 camera camera
-mkdir /data/misc/camera 0770 camera camera
+mkdir /data/vendor/qcam 0770 camera camera
 
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class main
     user camera
     group camera system inet input graphics

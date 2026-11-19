@@ -58,3 +58,6 @@
 
 # Keystore (software KeyMint, bring-up)
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service\.nonsecure u:object_r:hal_keymint_default_exec:s0
+
+# mm-qcamera-daemon socket and dumps
+/data/vendor/qcam(/.*)?        u:object_r:vendor_camera_data_file:s0
