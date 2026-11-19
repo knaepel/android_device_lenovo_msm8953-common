@@ -471,4 +471,7 @@
     <!-- The 2019 Adreno driver crashes system_server (memcpy past the thread
          stack) when ColorFade uploads the screen-off screenshot. -->
     <bool name="config_displayColorFadeDisabled">true</bool>
+
+    <!-- The tablet has no navigation keys, only the volume rocker. -->
+    <bool name="config_showNavigationBar">true</bool>
 </resources>
