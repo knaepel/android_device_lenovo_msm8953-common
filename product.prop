@@ -3,3 +3,6 @@ ro.telephony.block_binder_thread_on_incoming_calls=false
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
+
+# eBPF: Android 16 netbpfload refuses kernels < 4.14 (same as onclite on 4.9)
+ro.bpf.kver_override=5.15.178
