@@ -467,4 +467,8 @@
     <bool name="config_useVolumeKeySounds">false</bool>
 
     <bool name="config_isDesktopModeSupported">false</bool>
+
+    <!-- The 2019 Adreno driver crashes system_server (memcpy past the thread
+         stack) when ColorFade uploads the screen-off screenshot. -->
+    <bool name="config_displayColorFadeDisabled">true</bool>
 </resources>
