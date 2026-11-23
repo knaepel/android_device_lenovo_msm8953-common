@@ -107,6 +107,10 @@ BOARD_VENDOR := lenovo
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8953
 
+# Display HAL comes from platform/qcom (see msm8953.mk); keep the QSSI
+# vendor/qcom/opensource/display namespace out of the build
+USE_DEVICE_SPECIFIC_DISPLAY := true
+
 # 4.9 kernel: use the msm8953 (UM 4.9 legacy) HAL variant from hardware/qcom-caf
 TARGET_ENFORCES_QSSI := true
 

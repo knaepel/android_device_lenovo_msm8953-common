@@ -10,6 +10,11 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Display HAL from platform/qcom (onclite, CAF 2018) instead of
+# hardware/qcom-caf/msm8953: the Adreno and libsdmextension blobs expect its
+# gralloc handle and SDM layouts. Audio and media there are copies of qcom-caf.
+QCOM_SOONG_NAMESPACE := device/lenovo/msm8953-common/platform/qcom
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Permissions

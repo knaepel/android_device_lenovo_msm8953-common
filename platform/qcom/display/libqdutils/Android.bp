@@ -1,0 +1,68 @@
+cc_library_shared {
+    name: "libqdutils",
+    vendor: true,
+    defaults: ["display_defaults"],
+    header_libs: ["libhardware_headers", "libutils_headers"],
+    shared_libs: [
+        "libbinder",
+        "libqservice",
+    ],
+    cflags: [
+        "-DLOG_TAG=\"qdutils\"",
+        "-Wno-sign-conversion",
+        "-Wno-macro-redefined",
+        "-Wno-unused-variable",
+        "-Wno-unused-but-set-variable",
+        "-Wno-format",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+        "-Wno-unused-label",
+        "-Wno-gnu-designator",
+        "-Wno-typedef-redefinition",
+        "-Wno-shorten-64-to-32",
+        "-Wno-tautological-compare",
+        "-Wno-unused-function",
+        "-Wno-unused-local-typedef",
+        "-Wno-tautological-pointer-compare",
+        "-Wno-missing-field-initializers",
+        "-Wno-implicit-float-conversion",
+        "-Wno-conversion",
+        "-Wno-unused-value",
+    ],
+    srcs: [
+        "qd_utils.cpp",
+        "display_config.cpp",
+        "profiler.cpp"
+    ],
+}
+
+cc_library_shared {
+    name: "libqdMetaData",
+    vendor: true,
+    defaults: ["display_defaults"],
+    cflags: [
+        "-Wno-sign-conversion",
+        "-Wno-macro-redefined",
+        "-Wno-unused-variable",
+        "-Wno-unused-but-set-variable",
+        "-Wno-format",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+        "-Wno-unused-label",
+        "-Wno-gnu-designator",
+        "-Wno-typedef-redefinition",
+        "-Wno-shorten-64-to-32",
+        "-Wno-tautological-compare",
+        "-Wno-unused-function",
+        "-Wno-unused-local-typedef",
+        "-Wno-tautological-pointer-compare",
+        "-Wno-missing-field-initializers",
+        "-Wno-implicit-float-conversion",
+        "-Wno-conversion",
+        "-DLOG_TAG=\"qdmetadata\"",
+        "-Wno-unused-value",
+    ],
+    srcs: ["qdMetaData.cpp","qd_utils.cpp"],
+}
+
+// libqdMetaData.system comes from vendor/qcom/opensource/commonsys/display

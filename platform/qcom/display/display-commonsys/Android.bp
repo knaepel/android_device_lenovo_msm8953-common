@@ -1,0 +1,5 @@
+soong_namespace {
+    imports: [
+        "device/lenovo/msm8953-common/platform/qcom/display/display-commonsys-intf"
+    ],
+}

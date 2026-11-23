@@ -1,0 +1,5 @@
+// Display HAL from the onclite tree (CAF 2018): it matches the Adreno and
+// libsdmextension blobs. Audio and media are unchanged copies of
+// hardware/qcom-caf/msm8953, because QCOM_SOONG_NAMESPACE covers all three.
+soong_namespace {
+}
