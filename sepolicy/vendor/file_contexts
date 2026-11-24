@@ -54,7 +54,6 @@
 /sys/devices(/platform)?/soc/78b7000\.i2c/i2c-3/3-[0-9a-f]+/disable_keys         u:object_r:proc_touchpanel:s0
 
 # Time
-/vendor/bin/timekeep                                                          u:object_r:timekeep_exec:s0
 
 # Keystore (software KeyMint, bring-up)
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service\.nonsecure u:object_r:hal_keymint_default_exec:s0

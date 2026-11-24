@@ -60,7 +60,7 @@ blob_fixups: blob_fixups_user_type = {
 
 module = ExtractUtilsModule(
     'msm8953-common',
-    'xiaomi',
+    'lenovo',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,

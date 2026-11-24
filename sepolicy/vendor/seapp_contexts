@@ -1,3 +1,5 @@
+# TimeKeep (hardware/sony/timekeep) runs as a normal platform-signed app, its own
+# seapp_contexts entry only matches user=system
 user=_app seinfo=platform name=com.sony.timekeep domain=vendor_timekeep_app type=app_data_file
 user=network_stack seinfo=default domain=network_stack type=radio_data_file
 user=network_stack domain=network_stack type=radio_data_file
