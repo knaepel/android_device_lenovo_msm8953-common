@@ -445,6 +445,10 @@ service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
+    # loc_launcher gives each daemon its groups from izat.conf (inet for
+    # xtra-daemon). The file caps from config.fs do not reach binaries in
+    # /system/vendor, so grant them here.
+    capabilities SETUID SETGID
     task_profiles ServiceCapacityLow
 
 on property:persist.sys.xtra-daemon.enabled=*
