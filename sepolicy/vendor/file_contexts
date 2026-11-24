@@ -60,3 +60,9 @@
 
 # mm-qcamera-daemon socket and dumps
 /data/vendor/qcam(/.*)?        u:object_r:vendor_camera_data_file:s0
+
+# /odm is a symlink into /system/vendor/odm here. AOSP labels only
+# /(odm|vendor/odm)/etc, so the odm sepolicy files ended up as vendor_file:
+# system_server could not read odm_mac_permissions.xml and dropped all
+# seinfo mappings (platform apps such as the Updater ran as priv_app).
+/system/vendor/odm/etc(/.*)?                                            u:object_r:vendor_configs_file:s0
